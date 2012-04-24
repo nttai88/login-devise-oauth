@@ -1,7 +1,9 @@
 App1::Application.routes.draw do
   root :to => "home#index"
-  get "home/index"
-  resources :posts
+  
+  resources :posts do
+    resources :comments
+  end
 
   devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" } do
     get "login", :to => "devise/sessions#new"

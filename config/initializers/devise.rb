@@ -223,6 +223,6 @@ Devise.setup do |config|
 
   if Rails.env.development?
     config.omniauth :facebook, '101367803275338', '34f43038acc4a6e79bced13bb5335305', :scope => 'offline_access, email'
-    #config.omniauth :twitter, 'htPe5o3EmPTQdbK5xl2bbQ', 'YKNAHkfVVAogytMKKhjPZEdNaTy6m8m3ockkwADKI'
+    config.omniauth :twitter, 'sL9iSedIgjXuV3GZ6HauVQ', 'uAvCSzePmPtxxHLfhvO2hRuNBauVgEAs7CT9ZsrXzdE'
   end
 end

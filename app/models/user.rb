@@ -6,8 +6,7 @@ class User < ActiveRecord::Base
   attr_accessible :email, :password, :password_confirmation, :remember_me, :username
   
   ## CALLBACKS
-
-
+  
   def self.create_with_omniauth(auth)
     data = auth.extra.raw_info
     case auth["provider"]

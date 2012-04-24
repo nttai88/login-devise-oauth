@@ -7,9 +7,9 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
     oauthorize("Facebook")
   end
 
-#  def twitter
-#    oauthorize("Twitter")
-#  end
+  def twitter
+    oauthorize("Twitter")
+  end
 
   protected
 
