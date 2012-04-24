@@ -4,7 +4,7 @@ Devise.setup do |config|
   # ==> Mailer Configuration
   # Configure the e-mail address which will be shown in Devise::Mailer,
   # note that it will be overwritten if you use your own mailer class with default "from" parameter.
-  config.mailer_sender = "please-change-me-at-config-initializers-devise@example.com"
+  config.mailer_sender = "nttai88@gmail.com"
 
   # Configure the class responsible to send e-mails.
   # config.mailer = "Devise::Mailer"
@@ -85,7 +85,7 @@ Devise.setup do |config|
   config.stretches = Rails.env.test? ? 1 : 10
 
   # Setup a pepper to generate the encrypted password.
-  # config.pepper = "e3c044b7987be74d8d311b1b3af67097db258543badafe21925836f835d331b5f3aad8dc2606d959f60c055d5a1795ec584c57f81cb262f7f5136c4a24f8e223"
+  # config.pepper = "e36d5a00a3848cb9e4537cbdd9de2e6ed685f7c6ac291aa63dbff5a413a467072189bdc69597a6bfe4b4a9865242a4901ef26287ad6cad123879105cc3f4abae"
 
   # ==> Configuration for :confirmable
   # A period that the user is allowed to access the website even without
@@ -95,7 +95,7 @@ Devise.setup do |config|
   # the user cannot access the website without confirming his account.
   # config.allow_unconfirmed_access_for = 2.days
 
-  # If true, requires any email changes to be confirmed (exactly the same way as
+  # If true, requires any email changes to be confirmed (exctly the same way as
   # initial account confirmation) to be applied. Requires additional unconfirmed_email
   # db field (see migrations). Until confirmed new email is stored in
   # unconfirmed email column, and copied to email column on successful confirmation.
@@ -111,14 +111,13 @@ Devise.setup do |config|
   # If true, extends the user's remember period when remembered via cookie.
   # config.extend_remember_period = false
 
-  # This configures your application to use the salt as the remember token.
-  # Leave this set to true - this option was kept for backwards compatibility
-  # and will be removed in some future releases.
+  # If true, uses the password salt as remember token. This should be turned
+  # to false if you are not using database authenticatable.
   config.use_salt_as_remember_token = true
 
   # Options to be passed to the created cookie. For instance, you can set
   # :secure => true in order to force SSL only cookies.
-  # config.rememberable_options = {}
+  # config.cookie_options = {}
 
   # ==> Configuration for :validatable
   # Range for password length. Default is 6..128.
@@ -221,4 +220,9 @@ Devise.setup do |config|
   #   manager.intercept_401 = false
   #   manager.default_strategies(:scope => :user).unshift :some_external_strategy
   # end
+
+  if Rails.env.development?
+    config.omniauth :facebook, '101367803275338', '34f43038acc4a6e79bced13bb5335305', :scope => 'offline_access, email'
+    #config.omniauth :twitter, 'htPe5o3EmPTQdbK5xl2bbQ', 'YKNAHkfVVAogytMKKhjPZEdNaTy6m8m3ockkwADKI'
+  end
 end
